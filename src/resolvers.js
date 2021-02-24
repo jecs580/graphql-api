@@ -1,4 +1,5 @@
 import { tasks } from './sample'
+import User from './models/user'
 export const resolvers ={
     // Como analogia, podemos decir que este archivo funciona como los controladores de las rutas
     Query:{
