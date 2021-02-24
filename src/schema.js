@@ -6,6 +6,21 @@ const typesDefs = `
     type Query{
         hello:String
         greet(name:String): String
+        tasks:[Task]
+    }
+    type Mutation{
+        createTask(input:TaskInput):Task
+    }
+    type Task{
+        _id:ID
+        title:String!
+        description:String!
+        number:Int
+    }
+    input TaskInput{
+        title:String!
+        description:String!
+        number:Int
     }
 `;
 
