@@ -30,6 +30,14 @@ export const resolvers ={
             const newUser = new User(input);
             await newUser.save();
             return newUser;
+        },
+        async deleteUser(_,{_id}){
+            const userDelete = await User.findByIdAndDelete(_id);
+            return userDelete;
+        },
+        async updateUser(_,{_id,input}){
+            const userUpdated= await User.findByIdAndUpdate(_id,input,{new:true});
+            return userUpdated;
         }
     }
 }
